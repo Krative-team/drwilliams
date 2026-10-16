@@ -11,8 +11,7 @@
 .header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #f1f5f9;font-weight:700;font-size:20px;color:#134e4a}
 .profile{text-align:center;padding:24px 20px 10px}
 .avatar-wrap{width:120px;height:120px;border-radius:50%;margin:0 auto 14px;padding:4px;background:linear-gradient(135deg,#0f766e,#0ea5a4)}
-.avatar-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white;display:block;background:#e2e8f0;
-pointer-events:none!important;user-select:none!important;-webkit-user-select:none!important;-webkit-touch-callout:none!important;-webkit-user-drag:none!important}
+.avatar-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white;display:block;background:#e2e8f0}
 .upload-btn{font-size:11px;background:#0f766e;color:white;border:none;padding:6px 12px;border-radius:20px;margin-top:8px;cursor:pointer;display:none}
 .upload-btn.owner{ display:inline-block; }
   h1{margin:10px 0 0;font-size:24px;font-weight:800}
@@ -49,11 +48,8 @@ pointer-events:none!important;user-select:none!important;-webkit-user-select:non
 
   <div class="profile">
     <div class="avatar-wrap" id="avatarWrap">
-      <img id="profilePhoto" class="avatar-img" src="https://ui-avatars.com/api/?name=WM&background=0f766e&color=fff&size=200&bold=true" alt="Profile">
+      <img id="profilePhoto" class="avatar-img" src="https://i.postimg.cc/76pvmGDF/f2864675-8c58-47a1-bde1-18dc49b8abc9.jpg" alt="Dr Williams Leo Micheal">
     </div>
-    <input type="file" id="photoInput" accept="image/*">
-    <button id="uploadBtn" class="upload-btn" onclick="document.getElementById('photoInput').click()">📷 Choose Photo</button>
-    <div style="font-size:10px;color:#94a3b8;margin-top:6px" id="ownerHint">Triple-tap photo to edit</div>
     <h1>Dr Williams Micheal</h1>
     <div class="title">Orthopedic Surgeon • Director of Medical Services</div>
     <div class="location">📍 Edinburgh, Scotland</div>
@@ -66,11 +62,9 @@ pointer-events:none!important;user-select:none!important;-webkit-user-select:non
 
 <div class="action-row">
   <a href="EducationandExperience.html" class="btn-primary">
-    <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17"/><path d="M5 13.5v3.37a6.53 6.53 0 007 0v-3.37"/></svg>
     Explore Expertise
   </a>
   <a href="./William_Leo_Micheal_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-    <svg width="16" height="16" fill="none" stroke="#0f766e" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
     View CV
   </a>
 </div>
@@ -80,11 +74,11 @@ pointer-events:none!important;user-select:none!important;-webkit-user-select:non
 <fieldset style="background:#f8fafc; border-radius:16px; border:1.5px solid #eef2f7; margin:18px 20px 0;">
 	<legend style="padding:0 10px; font-size:12px; font-weight:800; color:#0f766e; letter-spacing:.4px; text-transform:uppercase;"><b>Socials</b></legend>
   <div class="links" style="padding:10px 6px 6px">
-    <a href="https://www.tiktok.com/@williams_micheal10" target="_blank" rel="noopener noreferrer" class="link-btn tiktok">
+    <a href="https://www.tiktok.com/@williams_micheal10" target="_blank" class="link-btn tiktok">
       <span class="left"><span class="icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg"></span> TikTok</span>
       <span class="arrow">›</span>
     </a>
-    <a href="https://discord.com/users/williamsmicheal0446_51653" target="_blank" rel="noopener noreferrer" class="link-btn discord">
+    <a href="https://discord.com/users/williamsmicheal0446_51653" target="_blank" class="link-btn discord">
       <span class="left"><span class="icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg"></span> Discord</span>
       <span class="arrow">›</span>
     </a>
@@ -118,63 +112,6 @@ pointer-events:none!important;user-select:none!important;-webkit-user-select:non
 </div>
 
 <script>
-// ===== OWNER ONLY SETTINGS - CHANGE THIS =====
-const OWNER_PASSWORD = "Leo2026"; // <-- Change to your secret password
-// =============================================
-
-const photoInput = document.getElementById('photoInput');
-const profilePhoto = document.getElementById('profilePhoto');
-const uploadBtn = document.getElementById('uploadBtn');
-const avatarWrap = document.getElementById('avatarWrap');
-
-// Block right-click and long-press save on image
-profilePhoto.addEventListener('contextmenu', e => e.preventDefault());
-avatarWrap.addEventListener('contextmenu', e => e.preventDefault());
-
-// Load saved photo
-const savedPhoto = localStorage.getItem('drPhoto');
-if(savedPhoto){ profilePhoto.src = savedPhoto; }
-
-// Owner authentication - triple tap to unlock
-let tapCount = 0;
-let isOwner = sessionStorage.getItem('isOwner') === 'true';
-if(isOwner) uploadBtn.classList.add('owner');
-
-avatarWrap.addEventListener('click', () => {
-  tapCount++;
-  setTimeout(()=>{ tapCount=0; }, 900);
-  if(tapCount>=3){
-    if(isOwner){
-      document.getElementById('photoInput').click();
-    } else {
-      const pass = prompt("Owner password to edit photo:");
-      if(pass === OWNER_PASSWORD){
-        isOwner = true;
-        sessionStorage.setItem('isOwner','true');
-        uploadBtn.classList.add('owner');
-        alert("Owner mode enabled - you can now change photo");
-        document.getElementById('photoInput').click();
-      } else if(pass!== null){
-        alert("Wrong password - photo is locked");
-      }
-    }
-    tapCount=0;
-  }
-});
-
-// Save new photo
-photoInput.addEventListener('change', function(e){
-  if(!isOwner){ alert("Not authorized"); return; }
-  const file = e.target.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(event){
-    profilePhoto.src = event.target.result;
-    localStorage.setItem('drPhoto', event.target.result);
-    alert("Photo saved on this device. Re-upload your site file to make it permanent for everyone.");
-  };
-  reader.readAsDataURL(file);
-});
-
 document.getElementById('directForm').addEventListener('submit', function(){ document.getElementById('successMsg').style.display = 'block'; });
 </script>
 </body>
