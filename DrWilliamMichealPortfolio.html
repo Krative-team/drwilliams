@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr Williams Micheal - Contact</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;margin:0;background:#f2f4f7;color:#1e293b;display:flex;justify-content:center}
+.container{width:100%;max-width:400px;min-height:100vh;background:white;box-shadow:0 0 30px rgba(0,0,0,0.06);padding-bottom:20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #f1f5f9;font-weight:700;font-size:20px;color:#134e4a}
+.profile{text-align:center;padding:24px 20px 10px}
+.avatar-wrap{width:120px;height:120px;border-radius:50%;margin:0 auto 14px;padding:4px;background:linear-gradient(135deg,#0f766e,#0ea5a4)}
+.avatar-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid white;display:block;background:#e2e8f0;
+pointer-events:none!important;user-select:none!important;-webkit-user-select:none!important;-webkit-touch-callout:none!important;-webkit-user-drag:none!important}
+.upload-btn{font-size:11px;background:#0f766e;color:white;border:none;padding:6px 12px;border-radius:20px;margin-top:8px;cursor:pointer;display:none}
+.upload-btn.owner{ display:inline-block; }
+  h1{margin:10px 0 0;font-size:24px;font-weight:800}
+.title{color:#0f766e;font-weight:600;font-size:13px;margin:8px 0}
+.location{color:#64748b;font-size:14px;margin-top:8px}
+.bio{text-align:left;background:#f8fafc;padding:16px;border-radius:12px;line-height:1.6;font-size:13.5px;margin:20px;border:1px solid #f1f5f9}
+.links{padding:0 20px}
+.link-btn{display:flex;align-items:center;justify-content:space-between;margin:12px 0;padding:12px 14px;border-radius:100px;text-decoration:none;font-weight:600;font-size:15px;cursor:pointer;color:white}
+.left{display:flex;align-items:center;gap:12px}
+.icon-circle{width:38px;height:38px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon-circle img{width:18px;height:18px}
+.tiktok{background:#000}
+.discord{background:#2b3a67}
+.email-btn{background:#0f766e}
+.arrow{opacity:.6}
+.action-row{display:flex;gap:10px;padding:0 20px;margin:18px 0 10px}
+.btn-primary{flex:1.6;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#0f766e,#14b8a6);color:white;text-decoration:none;padding:13px 14px;border-radius:100px;font-weight:700;font-size:14px;box-shadow:0 6px 16px rgba(15,118,110,0.25);transition:.2s}
+.btn-secondary{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:white;color:#0f766e;border:1.5px solid #ccfbf1;text-decoration:none;padding:13px 14px;border-radius:100px;font-weight:700;font-size:14px;transition:.2s}
+.btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
+.form-section{margin:26px 20px 0;padding:18px;background:#f8fafc;border-radius:14px;border:1px solid #eef2f7}
+.form-section h3{margin:0 0 14px;font-size:16px;font-weight:700}
+  label{display:block;font-size:12px;font-weight:600;color:#475569;margin:10px 0 5px}
+  input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e2e8f0;font-size:14px;font-family:inherit}
+  textarea{resize:none;height:90px}
+  button.submit{width:100%;margin-top:16px;padding:13px;border-radius:100px;border:none;background:#0f766e;color:white;font-weight:700;font-size:15px;cursor:pointer}
+.footer{font-size:11px;color:#94a3b8;text-align:center;margin:28px 20px}
+  #photoInput{display:none}
+.success{display:none;background:#ecfdf5;color:#065f46;padding:12px;border-radius:10px;font-size:13px;margin-top:12px;text-align:center;border:1px solid #a7f3d0}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header"><span><a href="index.html" style="color:#134e4a;">‹</a></span> My Portfolio <span>*</span></div>
+
+  <div class="profile">
+    <div class="avatar-wrap" id="avatarWrap">
+      <img id="profilePhoto" class="avatar-img" src="https://ui-avatars.com/api/?name=WM&background=0f766e&color=fff&size=200&bold=true" alt="Profile">
+    </div>
+    <input type="file" id="photoInput" accept="image/*">
+    <button id="uploadBtn" class="upload-btn" onclick="document.getElementById('photoInput').click()">📷 Choose Photo</button>
+    <div style="font-size:10px;color:#94a3b8;margin-top:6px" id="ownerHint">Triple-tap photo to edit</div>
+    <h1>Dr Williams Micheal</h1>
+    <div class="title">Orthopedic Surgeon • Director of Medical Services</div>
+    <div class="location">📍 Edinburgh, Scotland</div>
+  </div>
+
+  <div class="bio">
+    <strong>About</strong><br>
+    Orthopedic surgeon with 6 years of work experience, working with international health missions including collaborations with the US Embassy and United Nations. Focused on trauma and emergency orthopedic care.
+  </div>
+
+<div class="action-row">
+  <a href="EducationandExperience.html" class="btn-primary">
+    <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17"/><path d="M5 13.5v3.37a6.53 6.53 0 007 0v-3.37"/></svg>
+    Explore Expertise
+  </a>
+  <a href="./William_Leo_Micheal_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+    <svg width="16" height="16" fill="none" stroke="#0f766e" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    View CV
+  </a>
+</div>
+
+<hr style="border:none; border-top:1px solid #f1f5f9; margin:18px 20px 0">
+
+<fieldset style="background:#f8fafc; border-radius:16px; border:1.5px solid #eef2f7; margin:18px 20px 0;">
+	<legend style="padding:0 10px; font-size:12px; font-weight:800; color:#0f766e; letter-spacing:.4px; text-transform:uppercase;"><b>Socials</b></legend>
+  <div class="links" style="padding:10px 6px 6px">
+    <a href="https://www.tiktok.com/@williams_micheal10" target="_blank" rel="noopener noreferrer" class="link-btn tiktok">
+      <span class="left"><span class="icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg"></span> TikTok</span>
+      <span class="arrow">›</span>
+    </a>
+    <a href="https://discord.com/users/williamsmicheal0446_51653" target="_blank" rel="noopener noreferrer" class="link-btn discord">
+      <span class="left"><span class="icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg"></span> Discord</span>
+      <span class="arrow">›</span>
+    </a>
+    <a href="mailto:anelialeo31@gmail.com?subject=Professional%20Inquiry%20from%20Website" class="link-btn email-btn">
+      <span class="left"><span class="icon-circle"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg"></span> Contact via Email</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+</fieldset>
+
+  <div class="form-section">
+    <h3>Leave your contact information</h3>
+    <form id="directForm" action="https://formsubmit.co/anelialeo31@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Portfolio Contact from Website!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <label>Full Name</label>
+      <input type="text" name="Full Name" placeholder="John Doe" required>
+      <label>Email Address</label>
+      <input type="email" name="Email" placeholder="john@example.com" required>
+      <label>Phone / WhatsApp</label>
+      <input type="tel" name="Phone" placeholder="+44...">
+      <label>Message</label>
+      <textarea name="Message" placeholder="How can I help you?" required></textarea>
+      <button class="submit" type="submit">Send Information</button>
+      <div id="successMsg" class="success">✅ Information sent successfully!</div>
+    </form>
+  </div>
+
+  <div class="footer">For professional inquiries only.<br>Please verify identity via official channels.</div>
+</div>
+
+<script>
+// ===== OWNER ONLY SETTINGS - CHANGE THIS =====
+const OWNER_PASSWORD = "Leo2026"; // <-- Change to your secret password
+// =============================================
+
+const photoInput = document.getElementById('photoInput');
+const profilePhoto = document.getElementById('profilePhoto');
+const uploadBtn = document.getElementById('uploadBtn');
+const avatarWrap = document.getElementById('avatarWrap');
+
+// Block right-click and long-press save on image
+profilePhoto.addEventListener('contextmenu', e => e.preventDefault());
+avatarWrap.addEventListener('contextmenu', e => e.preventDefault());
+
+// Load saved photo
+const savedPhoto = localStorage.getItem('drPhoto');
+if(savedPhoto){ profilePhoto.src = savedPhoto; }
+
+// Owner authentication - triple tap to unlock
+let tapCount = 0;
+let isOwner = sessionStorage.getItem('isOwner') === 'true';
+if(isOwner) uploadBtn.classList.add('owner');
+
+avatarWrap.addEventListener('click', () => {
+  tapCount++;
+  setTimeout(()=>{ tapCount=0; }, 900);
+  if(tapCount>=3){
+    if(isOwner){
+      document.getElementById('photoInput').click();
+    } else {
+      const pass = prompt("Owner password to edit photo:");
+      if(pass === OWNER_PASSWORD){
+        isOwner = true;
+        sessionStorage.setItem('isOwner','true');
+        uploadBtn.classList.add('owner');
+        alert("Owner mode enabled - you can now change photo");
+        document.getElementById('photoInput').click();
+      } else if(pass!== null){
+        alert("Wrong password - photo is locked");
+      }
+    }
+    tapCount=0;
+  }
+});
+
+// Save new photo
+photoInput.addEventListener('change', function(e){
+  if(!isOwner){ alert("Not authorized"); return; }
+  const file = e.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(event){
+    profilePhoto.src = event.target.result;
+    localStorage.setItem('drPhoto', event.target.result);
+    alert("Photo saved on this device. Re-upload your site file to make it permanent for everyone.");
+  };
+  reader.readAsDataURL(file);
+});
+
+document.getElementById('directForm').addEventListener('submit', function(){ document.getElementById('successMsg').style.display = 'block'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr Williams Micheal - Education & Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; font-family:'Inter',-apple-system,sans-serif}
+  body{margin:0;background:linear-gradient(180deg,#f0fdfa 0%,#f2f4f7 100%);color:#1e293b;display:flex;justify-content:center}
+.container{width:100%;max-width:440px;min-height:100vh;background:white;box-shadow:0 20px 60px rgba(15,118,110,0.08);overflow:hidden}
+.header{display:flex;align-items:center;gap:14px;padding:18px 22px;font-weight:800;font-size:18px;color:#134e4a;position:sticky;top:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid #f0fdfa}
+.back{width:36px;height:36px;border-radius:50%;background:#f1f5f9;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#0f766e;transition:.2s}
+.back:hover{background:#ccfbf1;transform:scale(1.05)}
+.back svg{width:18px;height:18px}
+.hero{padding:28px 22px 18px;background:radial-gradient(700px circle at 20% -50%, #ccfbf1 0%, white 65%);text-align:center;border-bottom:1px solid #f8fafc}
+.hero h1{margin:0;font-size:22px;font-weight:800;letter-spacing:-.4px;color:#0f172a}
+.hero p{margin:8px 0 0;font-size:13px;color:#64748b}
+.content{padding:28px 18px 20px}
+.section{position:relative; background:white;border:1px solid #eef2f7;border-radius:20px;padding:26px 20px 20px;margin-bottom:32px;box-shadow:0 4px 18px rgba(0,0,0,0.03);transition:.25s; overflow:visible}
+.section:hover{box-shadow:0 8px 28px rgba(15,118,110,0.08);transform:translateY(-1px)}
+.section h3{margin:0 0 16px;font-size:12.5px;font-weight:800;color:#0f766e;display:flex;align-items:center;gap:10px;letter-spacing:.6px;text-transform:uppercase; padding-right:70px}
+.icon-badge{width:32px;height:32px;background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border-radius:9px;display:flex;align-items:center;justify-content:center;border:1px solid #e0f2f1}
+.icon-badge svg{width:17px;height:17px;color:#0f766e}
+
+  /* PHOTO FRAME - CLEAN, NO CAMERA ICON */
+.photo-frame{position:absolute; top:-18px; right:18px; width:66px; height:66px; border-radius:16px; padding:3px; background:linear-gradient(135deg,#0f766e,#14b8a6); box-shadow:0 6px 18px rgba(15,118,110,0.25); z-index:2; cursor:default; transition:.2s}
+.photo-frame.owner{cursor:pointer}
+.photo-frame img{width:100%;height:100%;border-radius:13px;object-fit:cover;display:block;background:white;border:2px solid white; pointer-events:none!important;user-select:none!important;-webkit-touch-callout:none!important;-webkit-user-drag:none!important}
+.photo-frame.overlay{position:absolute; inset:3px; border-radius:13px; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); color:#0f766e; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; letter-spacing:.8px; opacity:0; transition:.2s; text-transform:uppercase; border:1.5px dashed #99f6e0}
+.photo-frame.owner:hover.overlay{opacity:1}
+.hidden-input{display:none}
+.timeline{position:relative;padding-left:18px;border-left:2px solid #f1f5f9;margin-left:6px}
+.item{position:relative;margin-bottom:18px;padding-left:18px}
+.item:last-child{margin-bottom:0}
+.item::before{content:'';position:absolute;left:-26px;top:4px;width:10px;height:10px;background:white;border:3px solid #0f766e;border-radius:50%;box-shadow:0 0 0 4px #ccfbf1}
+.year{font-size:10px;font-weight:800;color:#0f766e;background:#ccfbf1;padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:7px;letter-spacing:.4px}
+.item strong{font-size:13.8px;display:block;color:#0f172a;line-height:1.3}
+.item span{font-size:12.6px;color:#475569;line-height:1.6;display:block;margin-top:4px}
+.value{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.value:last-child{margin-bottom:0}
+.value-icon{width:40px;height:40px;background:linear-gradient(135deg,white,#f8fafc);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.04);border:1px solid #f1f5f9}
+.value-icon svg{width:19px;height:19px;color:#0f766e}
+.value-text strong{font-size:13.5px;display:block;color:#0f172a}
+.value-text p{font-size:12.6px;color:#64748b;margin:4px 0 0;line-height:1.6}
+.license-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.license-card{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.license-card svg{width:18px;height:18px;color:#0f766e;flex-shrink:0}
+.license-card strong{font-size:13px;color:#0f172a}
+.license-card span{font-size:11.5px;color:#64748b}
+.owner-banner{display:none;background:#0f766e;color:white;font-size:11px;text-align:center;padding:8px;border-radius:8px;margin-bottom:16px}
+.owner-banner.show{display:block}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <a href="DrWilliamMichealPortfolio.html" class="back"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></a>
+    Education & Experience
+  </div>
+
+  <div class="hero">
+    <h1>Professional Journey</h1>
+    <p id="heroHint">Triple-tap photo frame to edit (owner only)</p>
+  </div>
+
+  <div class="content">
+    <div id="ownerBanner" class="owner-banner">🔓 Owner Mode Active - Tap photo to change</div>
+
+    <!-- EDUCATION - TITLE ICON RESTORED -->
+    <div class="section">
+      <div class="photo-frame" id="frame-edu">
+        <img id="img-edu" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&h=200&fit=crop" alt="Education">
+        <div class="overlay">Edit</div>
+      </div>
+      <input type="file" id="input-edu" class="hidden-input" accept="image/*">
+      <h3><span class="icon-badge"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17"/><path d="M5 13.5v3.37a6.53 6.53 0 007 0v-3.37"/></svg></span> Educational Background</h3>
+      <div class="timeline">
+        <div class="item"><span class="year">2014 - 2020</span><strong>Doctor of Medicine (MD) - Orthopedic Surgery</strong><span>University of Edinburgh, Scotland, UK</span></div>
+        <div class="item"><span class="year">2012 - 2014</span><strong>MBBS - Bachelor of Medicine, Surgery</strong><span>University of Glasgow, Scotland</span></div>
+        <div class="item"><span class="year">2021</span><strong>Advanced Trauma Life Support (ATLS)</strong><span>Royal College of Surgeons of Edinburgh</span></div>
+      </div>
+    </div>
+
+    <!-- WORK - TITLE ICON RESTORED -->
+    <div class="section">
+      <div class="photo-frame" id="frame-work">
+        <img id="img-work" src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=200&h=200&fit=crop" alt="Work">
+        <div class="overlay">Edit</div>
+      </div>
+      <input type="file" id="input-work" class="hidden-input" accept="image/*">
+      <h3><span class="icon-badge"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span> Work Experience</h3>
+      <div class="timeline">
+        <div class="item"><span class="year">2022 - Present</span><strong>Director of Medical Services & Senior Orthopedic Surgeon</strong><span>Edinburgh Royal Infirmary</span></div>
+        <div class="item"><span class="year">2020 - 2022</span><strong>Orthopedic Surgeon - International Health Missions</strong><span>US Embassy & UN Collaborations</span></div>
+        <div class="item"><span class="year">2019 - 2020</span><strong>Orthopedic Resident</strong><span>Western General Hospital</span></div>
+      </div>
+    </div>
+
+    <!-- VALUES - TITLE ICON RESTORED -->
+    <div class="section">
+      <div class="photo-frame" id="frame-values">
+        <img id="img-values" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&h=200&fit=crop" alt="Values">
+        <div class="overlay">Edit</div>
+      </div>
+      <input type="file" id="input-values" class="hidden-input" accept="image/*">
+      <h3><span class="icon-badge"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span> Professional Values</h3>
+      <div class="value"><div class="value-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="value-text"><strong>Patient-Centered Care</strong><p>Compassion, dignity and highest standard of care.</p></div></div>
+      <div class="value"><div class="value-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="value-text"><strong>Integrity & Ethics</strong><p>Transparency and professional ethics.</p></div></div>
+    </div>
+
+    <!-- LICENSES - TITLE ICON RESTORED -->
+    <div class="section">
+      <div class="photo-frame" id="frame-license">
+        <img id="img-license" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=200&h=200&fit=crop" alt="License">
+        <div class="overlay">Edit</div>
+      </div>
+      <input type="file" id="input-license" class="hidden-input" accept="image/*">
+      <h3><span class="icon-badge"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span> Licenses & Memberships</h3>
+      <div class="license-grid">
+        <div class="license-card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><div><strong>GMC - UK Licensed</strong><br><span>British Orthopaedic Association (BOA)</span></div></div>
+        <div class="license-card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg><div><strong>Royal College of Surgeons</strong><br><span>Fellow - FRCS (Tr & Orth)</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const OWNER_PASSWORD = "Leo2026";
+let isOwner = sessionStorage.getItem('isOwner') === 'true';
+const banner = document.getElementById('ownerBanner');
+function enableOwner(){
+  isOwner=true; sessionStorage.setItem('isOwner','true');
+  document.querySelectorAll('.photo-frame').forEach(f=>f.classList.add('owner'));
+  banner.classList.add('show');
+  document.getElementById('heroHint').innerText="Owner mode: Tap photo to change";
+}
+if(isOwner) enableOwner();
+document.addEventListener('contextmenu', e=>{ if(e.target.tagName==='IMG') e.preventDefault(); });
+function setupFrame(inputId,imgId,frameId,storageKey){
+  const input=document.getElementById(inputId), img=document.getElementById(imgId), frame=document.getElementById(frameId);
+  const saved=localStorage.getItem(storageKey); if(saved) img.src=saved;
+  let taps=0;
+  frame.addEventListener('click',()=>{
+    taps++; setTimeout(()=>{taps=0},900);
+    if(taps>=3){
+      taps=0;
+      if(!isOwner){
+        const pass=prompt("Owner password to edit photos:");
+        if(pass===OWNER_PASSWORD){enableOwner(); input.click();}
+        else if(pass!==null) alert("Wrong password - photos are locked");
+      } else input.click();
+    }
+  });
+  input.addEventListener('change',e=>{
+    const file=e.target.files[0]; if(!file) return;
+    const r=new FileReader(); r.onload=ev=>{img.src=ev.target.result; localStorage.setItem(storageKey,ev.target.result);}; r.readAsDataURL(file);
+  });
+}
+setupFrame('input-edu','img-edu','frame-edu','eduPhoto');
+setupFrame('input-work','img-work','frame-work','workPhoto');
+setupFrame('input-values','img-values','frame-values','valuesPhoto');
+setupFrame('input-license','img-license','frame-license','licensePhoto');
+</script>
+</body>
+</html>
